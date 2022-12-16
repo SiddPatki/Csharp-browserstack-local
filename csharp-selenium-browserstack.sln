@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.25
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-selenium-browserstack", "csharp-selenium-browserstack.csproj", "{E33B8CB2-6172-4222-BB9C-61CFB13EBA7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E33B8CB2-6172-4222-BB9C-61CFB13EBA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33B8CB2-6172-4222-BB9C-61CFB13EBA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33B8CB2-6172-4222-BB9C-61CFB13EBA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33B8CB2-6172-4222-BB9C-61CFB13EBA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE566797-3F8A-44CC-97EB-F96E9FEFA362}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.StandardHeader = $4
+		$0.VersionControlPolicy = $5
+	EndGlobalSection
+EndGlobal

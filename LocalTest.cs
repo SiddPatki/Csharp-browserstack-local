@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using BrowserStack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Remote;

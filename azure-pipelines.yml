@@ -20,9 +20,14 @@ steps:
   inputs:
     BrowserStackServiceEndPoint: 'Sid-demo-bstack'
     browserstackLocal: true
-    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "-use-system-installed-ca": true, "forceProxy": true}'
+    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "useSystemInstalledCa": true, "forceLocal": true}'
 
 - script: dotnet run Program.cs single
   displayName: 'dotnet run Parallel $(buildConfiguration)'
 
 - task: BrowserStackStopLocal@0
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'logs.txt'
+    publishLocation: 'pipeline'

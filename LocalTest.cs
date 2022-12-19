@@ -34,7 +34,7 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
-            Creates an instance of Local
+            // Creates an instance of Local
             Local local = new Local();
 
             // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".

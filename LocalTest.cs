@@ -29,7 +29,7 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("local", BROWSERSTACK_LOCAL);
             browserstackOptions.Add("localIdentifier", BROWSERSTACK_LOCAL_IDENTIFIER);
             browserstackOptions.Add("buildName", BROWSERSTACK_BUILD_NAME);
-            browserstackOptions.Add("sessionName", "Single Test");
+            browserstackOptions.Add("sessionName", "Local Test");
             browserstackOptions.Add("userName", BROWSERSTACK_USERNAME);
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);

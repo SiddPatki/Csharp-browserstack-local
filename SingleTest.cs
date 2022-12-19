@@ -14,11 +14,11 @@ namespace csharp_selenium_browserstack
             // Update your credentials
             String? BROWSERSTACK_USERNAME = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
             if (BROWSERSTACK_USERNAME is null)
-                BROWSERSTACK_USERNAME = "BROWSERSTACK_USERNAME";
+                BROWSERSTACK_USERNAME = "siddharthapatki2";
 
             String? BROWSERSTACK_ACCESS_KEY = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
             if (BROWSERSTACK_ACCESS_KEY is null)
-                BROWSERSTACK_ACCESS_KEY = "BROWSERSTACK_ACCESS_KEY";
+                BROWSERSTACK_ACCESS_KEY = "1pkpXahTJTDkhMeAhvfu";
             IWebDriver driver;
             SafariOptions capabilities = new SafariOptions();
             Dictionary<string, object> browserstackOptions = new Dictionary<string, object>();

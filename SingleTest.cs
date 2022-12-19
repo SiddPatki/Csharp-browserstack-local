@@ -10,11 +10,13 @@ namespace csharp_selenium_browserstack
     {
         public static void execute()
         {
-            // Update your credentials
+             // Update your credentials
             String? BROWSERSTACK_USERNAME = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
             String? BROWSERSTACK_ACCESS_KEY = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
             String? BROWSERSTACK_LOCAL_IDENTIFIER = Environment.GetEnvironmentVariable("BROWSERSTACK_LOCAL_IDENTIFIER");
+            String? BROWSERSTACK_LOCAL = Environment.GetEnvironmentVariable("BROWSERSTACK_LOCAL");
             String? BROWSERSTACK_BUILD_NAME = Environment.GetEnvironmentVariable("BROWSERSTACK_BUILD_NAME");
+            
             
             
             IWebDriver driver;
@@ -23,13 +25,14 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("osVersion", "14");
             browserstackOptions.Add("deviceName", "iPhone 12");
             browserstackOptions.Add("realMobile", "true");
-            browserstackOptions.Add("local", "true");
+            browserstackOptions.Add("local", BROWSERSTACK_LOCAL);
             browserstackOptions.Add("localIdentifier", BROWSERSTACK_LOCAL_IDENTIFIER);
             browserstackOptions.Add("buildName", BROWSERSTACK_BUILD_NAME);
             browserstackOptions.Add("sessionName", "Single Test");
             browserstackOptions.Add("userName", BROWSERSTACK_USERNAME);
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
+
 
             // Creates an instance of Local
 //             Local local = new Local();

@@ -20,7 +20,7 @@ steps:
   inputs:
     BrowserStackServiceEndPoint: 'Sid-demo-bstack'
     browserstackLocal: true
-    bsLocalOptions: '{"verbose": true, "forceProxy": true}'
+    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "-use-system-installed-ca": true, "forceProxy": true}'
 
 - script: dotnet run Program.cs single
   displayName: 'dotnet run Parallel $(buildConfiguration)'

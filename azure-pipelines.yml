@@ -25,4 +25,3 @@ steps:
   displayName: 'dotnet run Parallel $(buildConfiguration)'
 
 - task: BrowserStackStopLocal@0
-  inputs:

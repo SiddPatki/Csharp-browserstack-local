@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using BrowserStack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Remote;
@@ -33,16 +34,16 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
-            // Creates an instance of Local
-//             Local local = new Local();
+            Creates an instance of Local
+            Local local = new Local();
 
-//             // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
-//             List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
-//             // Starts the Local instance with the required arguments
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
+            // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
+            List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
+            // Starts the Local instance with the required arguments
+            bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
 
-//             // Starts the Local instance with the required arguments
-//             local.start(bsLocalArgs);
+            // Starts the Local instance with the required arguments
+            local.start(bsLocalArgs);
             driver = new RemoteWebDriver(new Uri("https://hub.browserstack.com/wd/hub/"), capabilities);
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
            
@@ -61,7 +62,7 @@ namespace csharp_selenium_browserstack
                 ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" Issues connecting local\"}}");
             }
             driver.Quit();
-//             local.stop();
+            local.stop();
 
         }
     }

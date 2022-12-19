@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using BrowserStack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Remote;
@@ -28,28 +29,29 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("local", BROWSERSTACK_LOCAL);
             browserstackOptions.Add("localIdentifier", BROWSERSTACK_LOCAL_IDENTIFIER);
             browserstackOptions.Add("buildName", BROWSERSTACK_BUILD_NAME);
-            browserstackOptions.Add("sessionName", "Single Test");
+            browserstackOptions.Add("sessionName", "Local Test");
             browserstackOptions.Add("userName", BROWSERSTACK_USERNAME);
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
 
-            // Creates an instance of Local
-//             Local local = new Local();
+            Creates an instance of Local
+            Local local = new Local();
 
-//             // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
-//             List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
-//             // Starts the Local instance with the required arguments
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("v", "true"));
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("logfile", "./logs.txt"));
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("forcelocal", "true"));
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("-use-system-installed-ca", "true"));
-//             bsLocalArgs.Add(new KeyValuePair<string, string>("localIdentifier", "HelloWorllld"));
+            // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
+            List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
+            // Starts the Local instance with the required arguments
+            bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
+            bsLocalArgs.Add(new KeyValuePair<string, string>("binarypath", "./BrowserStackLocal"));
+            bsLocalArgs.Add(new KeyValuePair<string, string>("v", "true"));
+            bsLocalArgs.Add(new KeyValuePair<string, string>("logfile", "./logs.txt"));
+            bsLocalArgs.Add(new KeyValuePair<string, string>("forcelocal", "true"));
+            bsLocalArgs.Add(new KeyValuePair<string, string>("-use-system-installed-ca", "true"));
+            bsLocalArgs.Add(new KeyValuePair<string, string>("localIdentifier", BROWSERSTACK_LOCAL_IDENTIFIER));
 
 
-//             // Starts the Local instance with the required arguments
-//             local.start(bsLocalArgs);
+            // Starts the Local instance with the required arguments
+            local.start(bsLocalArgs);
             driver = new RemoteWebDriver(new Uri("https://hub.browserstack.com/wd/hub/"), capabilities);
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
@@ -75,7 +77,7 @@ namespace csharp_selenium_browserstack
                 ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" Some elements failed to load.\"}}");
             }
             driver.Quit();
-//             local.stop();
+            local.stop();
 
         }
     }

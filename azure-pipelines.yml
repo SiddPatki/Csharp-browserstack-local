@@ -15,7 +15,14 @@ variables:
 steps:
 - script: dotnet build
   displayName: 'dotnet build $(buildConfiguration)'
+
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'Sid-demo-bstack'
+    browserstackLocal: true
+
 - script: dotnet run Program.cs single
   displayName: 'dotnet run Parallel $(buildConfiguration)'
 
-
+- task: BrowserStackStopLocal@0
+  inputs:

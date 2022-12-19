@@ -25,7 +25,7 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("osVersion", "14");
             browserstackOptions.Add("deviceName", "iPhone 12");
             browserstackOptions.Add("realMobile", "true");
-            browserstackOptions.Add("local", "true");
+            browserstackOptions.Add("local", "false");
             browserstackOptions.Add("localIdentifier", "HelloWorllld");
             browserstackOptions.Add("buildName", "browserstack-local-cSharp");
             browserstackOptions.Add("sessionName", "Single Test");

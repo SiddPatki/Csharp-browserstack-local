@@ -18,7 +18,10 @@ namespace csharp_selenium_browserstack
             String? BROWSERSTACK_LOCAL = Environment.GetEnvironmentVariable("BROWSERSTACK_LOCAL");
             String? BROWSERSTACK_BUILD_NAME = Environment.GetEnvironmentVariable("BROWSERSTACK_BUILD_NAME");
             
-            
+            if (BROWSERSTACK_LOCAL_IDENTIFIER is null)
+                BROWSERSTACK_LOCAL_IDENTIFIER = "HelloMyWorld";
+            if (BROWSERSTACK_LOCAL is null)
+                BROWSERSTACK_LOCAL = "true";
             
             IWebDriver driver;
             SafariOptions capabilities = new SafariOptions();

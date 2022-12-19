@@ -20,6 +20,8 @@ steps:
   inputs:
     BrowserStackServiceEndPoint: 'Sid-demo-bstack'
     browserstackLocal: true
+    bsLocalOptions: '{''verbose'': ''3'', ''logFile'': ''./logs.txt'', ''forceLocal'': ''true'' }'
+    
 
 - script: dotnet run Program.cs single
   displayName: 'dotnet run Parallel $(buildConfiguration)'

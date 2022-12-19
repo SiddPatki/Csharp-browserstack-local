@@ -15,7 +15,7 @@ variables:
 steps:
 - script: dotnet build
   displayName: 'dotnet build $(buildConfiguration)'
-- script: dotnet run Program.cs single
-  displayName: 'dotnet run Single $(buildConfiguration)'
+- script: dotnet run Program.cs parallel
+  displayName: 'dotnet run Parallel $(buildConfiguration)'
 
 

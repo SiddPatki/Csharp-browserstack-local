@@ -27,7 +27,8 @@ namespace csharp_selenium_browserstack
             browserstackOptions.Add("realMobile", "true");
             browserstackOptions.Add("local", "true");
             browserstackOptions.Add("localIdentifier", "HelloWorllld");
-            browserstackOptions.Add("buildName", "browserstack-local-c#");
+            browserstackOptions.Add("buildName", "browserstack-local-cSharp");
+            browserstackOptions.Add("sessionName", "Single Test");
             browserstackOptions.Add("userName", BROWSERSTACK_USERNAME);
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
@@ -39,7 +40,6 @@ namespace csharp_selenium_browserstack
             List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
             // Starts the Local instance with the required arguments
             bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
-            bsLocalArgs.Add(new KeyValuePair<string, string>("binarypath", "/Users/siddharthapatki/Downloads/BrowserStackLocal"));
             bsLocalArgs.Add(new KeyValuePair<string, string>("v", "true"));
             bsLocalArgs.Add(new KeyValuePair<string, string>("logfile", "./logs.txt"));
             bsLocalArgs.Add(new KeyValuePair<string, string>("forcelocal", "true"));

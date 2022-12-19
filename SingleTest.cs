@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using BrowserStack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Remote;
@@ -13,21 +12,18 @@ namespace csharp_selenium_browserstack
         {
             // Update your credentials
             String? BROWSERSTACK_USERNAME = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
-            if (BROWSERSTACK_USERNAME is null)
-                BROWSERSTACK_USERNAME = "siddharthapatki2";
-
             String? BROWSERSTACK_ACCESS_KEY = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
-            if (BROWSERSTACK_ACCESS_KEY is null)
-                BROWSERSTACK_ACCESS_KEY = "1pkpXahTJTDkhMeAhvfu";
+            String? BROWSERSTACK_LOCAL_IDENTIFIER = Environment.GetEnvironmentVariable("BROWSERSTACK_LOCAL_IDENTIFIER");
+            
             IWebDriver driver;
             SafariOptions capabilities = new SafariOptions();
             Dictionary<string, object> browserstackOptions = new Dictionary<string, object>();
             browserstackOptions.Add("osVersion", "14");
             browserstackOptions.Add("deviceName", "iPhone 12");
             browserstackOptions.Add("realMobile", "true");
-            browserstackOptions.Add("local", "false");
-            browserstackOptions.Add("localIdentifier", "HelloWorllld");
-            browserstackOptions.Add("buildName", "browserstack-local-cSharp");
+            browserstackOptions.Add("local", "true");
+            browserstackOptions.Add("localIdentifier", BROWSERSTACK_LOCAL_IDENTIFIER);
+            browserstackOptions.Add("buildName", BROWSERSTACK_BUILD_NAME);
             browserstackOptions.Add("sessionName", "Single Test");
             browserstackOptions.Add("userName", BROWSERSTACK_USERNAME);
             browserstackOptions.Add("accessKey", BROWSERSTACK_ACCESS_KEY);

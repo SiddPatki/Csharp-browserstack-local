@@ -34,21 +34,21 @@ namespace csharp_selenium_browserstack
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
             // Creates an instance of Local
-            Local local = new Local();
+//             Local local = new Local();
 
-            // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
-            List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
-            // Starts the Local instance with the required arguments
-            bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
-            bsLocalArgs.Add(new KeyValuePair<string, string>("v", "true"));
-            bsLocalArgs.Add(new KeyValuePair<string, string>("logfile", "./logs.txt"));
-            bsLocalArgs.Add(new KeyValuePair<string, string>("forcelocal", "true"));
-            bsLocalArgs.Add(new KeyValuePair<string, string>("-use-system-installed-ca", "true"));
-            bsLocalArgs.Add(new KeyValuePair<string, string>("localIdentifier", "HelloWorllld"));
+//             // You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
+//             List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>();
+//             // Starts the Local instance with the required arguments
+//             bsLocalArgs.Add(new KeyValuePair<string, string>("key", BROWSERSTACK_ACCESS_KEY));
+//             bsLocalArgs.Add(new KeyValuePair<string, string>("v", "true"));
+//             bsLocalArgs.Add(new KeyValuePair<string, string>("logfile", "./logs.txt"));
+//             bsLocalArgs.Add(new KeyValuePair<string, string>("forcelocal", "true"));
+//             bsLocalArgs.Add(new KeyValuePair<string, string>("-use-system-installed-ca", "true"));
+//             bsLocalArgs.Add(new KeyValuePair<string, string>("localIdentifier", "HelloWorllld"));
 
 
-            // Starts the Local instance with the required arguments
-            local.start(bsLocalArgs);
+//             // Starts the Local instance with the required arguments
+//             local.start(bsLocalArgs);
             driver = new RemoteWebDriver(new Uri("https://hub.browserstack.com/wd/hub/"), capabilities);
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
@@ -74,7 +74,7 @@ namespace csharp_selenium_browserstack
                 ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" Some elements failed to load.\"}}");
             }
             driver.Quit();
-            local.stop();
+//             local.stop();
 
         }
     }

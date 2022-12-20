@@ -8,7 +8,7 @@ trigger:
 - azure-plugin
 
 pool:
-  vmImage: windows-2019
+  vmImage: windows-latest
 
 variables:
   buildConfiguration: 'Release'

@@ -21,7 +21,7 @@ steps:
     BrowserStackServiceEndPoint: 'Sid-demo-bstack'
 
 - script: dotnet run Program.cs single
-  displayName: 'dotnet run Parallel $(buildConfiguration)'
+  displayName: 'dotnet run $(buildConfiguration)'
 
 - task: PublishPipelineArtifact@1
   inputs:

@@ -8,7 +8,7 @@ trigger:
 - azure-plugin
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: macOS-latest
 
 variables:
   buildConfiguration: 'Release'
@@ -16,11 +16,11 @@ variables:
 steps:
 - script: dotnet build
   displayName: 'dotnet build $(buildConfiguration)'
-- script: cd $(Pipeline.Workspace)
-- script: ls
-- script: cd $(Agent.BuildDirectory)
-- script: ls
-- script: mv ./cert.pem /usr/local/etc/openssl/cert.pem
+# - script: cd $(Pipeline.Workspace)
+# - script: ls
+# - script: cd $(Agent.BuildDirectory)
+# - script: ls
+# - script: mv ./cert.pem /usr/local/etc/openssl/cert.pem
 
 - task: BrowserStackConfig@0
   inputs:

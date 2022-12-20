@@ -16,17 +16,16 @@ variables:
 steps:
 - script: dotnet build
   displayName: 'dotnet build $(buildConfiguration)'
-# - script: cd $(Pipeline.Workspace)
-# - script: ls
-# - script: cd $(Agent.BuildDirectory)
-# - script: ls
-# - script: mv ./cert.pem /usr/local/etc/openssl/cert.pem
+- script: cd $(Pipeline.Workspace)
+- script: ls
+- script: cd $(Agent.BuildDirectory)
+- script: ls
 
 - task: BrowserStackConfig@0
   inputs:
     BrowserStackServiceEndPoint: 'Sid-demo-bstack'
     browserstackLocal: true
-    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "-use-ca-certificate": "$(Agent.BuildDirectory)/cert.pem", "forceLocal": true}'
+    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "forceLocal": true, "-use-ca-certificate": "$(Agent.BuildDirectory)/cert.pem"}'
 
 - script: dotnet run Program.cs single
   displayName: 'dotnet run $(buildConfiguration)'

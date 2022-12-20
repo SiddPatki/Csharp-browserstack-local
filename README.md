@@ -1,4 +1,4 @@
-# csharp-selenium-browserstack
+# Azure Plugin + csharp-selenium-browserstack
 
 ## Prerequisite
 <b>Dotnet CLI</b> must be installed on your system. Check the installation exists before running script.

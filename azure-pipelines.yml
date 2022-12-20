@@ -20,6 +20,7 @@ steps:
 - script: ls
 - script: cd $(Agent.BuildDirectory)
 - script: ls
+- script: mv ./cert.pem /usr/local/etc/openssl/cert.pem
 
 - task: BrowserStackConfig@0
   inputs:

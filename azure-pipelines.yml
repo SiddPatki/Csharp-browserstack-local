@@ -25,8 +25,7 @@ steps:
   inputs:
     BrowserStackServiceEndPoint: 'Sid-demo-bstack'
     browserstackLocal: true
-    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "use-system-installed-ca": true, "forceLocal": true}'
-    # bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "use-ca-certificate": "..\cert.pem", "forceLocal": true}'
+    bsLocalOptions: '{"verbose": 3, "logFile": "./logs.txt", "use-ca-certificate": "..\cert.pem", "forceLocal": true}'
 
 - script: dotnet run Program.cs single
   displayName: 'dotnet run $(buildConfiguration)'

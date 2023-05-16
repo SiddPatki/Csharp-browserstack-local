@@ -39,4 +39,4 @@ steps:
 
 - task: BrowserStackResults@1
   inputs:
-    browserstackProduct: 'App Automate'
+    browserstackProduct: 'automate'

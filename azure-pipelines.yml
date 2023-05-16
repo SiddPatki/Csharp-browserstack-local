@@ -36,3 +36,7 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'logs.txt'
     publishLocation: 'pipeline'
+
+- task: BrowserStackResults@1
+  inputs:
+    browserstackProduct: 'App Automate'

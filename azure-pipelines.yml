@@ -31,12 +31,11 @@ steps:
   displayName: 'dotnet run $(buildConfiguration)'
 
 - task: BrowserStackStopLocal@0
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'logs.txt'
-    publishLocation: 'pipeline'
-
+# - task: PublishPipelineArtifact@1
+#   inputs:
+#     targetPath: '$(Pipeline.Workspace)'
+#     artifact: 'logs.txt'
+#     publishLocation: 'pipeline'
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
